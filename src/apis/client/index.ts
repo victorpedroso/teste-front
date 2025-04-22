@@ -2,7 +2,7 @@ import { Api } from './ClientApi';
 
 export const useClienteApi = () => {
   const api = new Api({
-    baseURL: 'https://localhost:44385',
+    baseURL: 'https://ecjirdsy35iqhfqjtxbuf5zzda0euegm.lambda-url.us-east-1.on.aws',
     withCredentials: true,
     secure: true,
   });
