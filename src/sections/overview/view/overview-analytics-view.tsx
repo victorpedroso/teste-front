@@ -13,14 +13,32 @@ import { AnalyticsWidgetSummary } from '../analytics-widget-summary';
 import { AnalyticsTrafficBySite } from '../analytics-traffic-by-site';
 import { AnalyticsCurrentSubject } from '../analytics-current-subject';
 import { AnalyticsConversionRates } from '../analytics-conversion-rates';
+import Button from '@mui/material/Button';
+import { useClienteApi } from 'src/apis/client';
 
 // ----------------------------------------------------------------------
 
 export function OverviewAnalyticsView() {
+  const clientApi = useClienteApi();
+  const handleSubmit = async () => {
+    const response = await clientApi.accountAuthInfoList();
+    console.log(response);
+  }
   return (
     <DashboardContent maxWidth="xl">
       <Typography variant="h4" sx={{ mb: { xs: 3, md: 5 } }}>
         Hi, Welcome back 👋
+
+        <Button
+          fullWidth
+          size="large"
+          type="submit"
+          color="inherit"
+          variant="contained"
+          onClick={handleSubmit}
+        >
+          Sign in
+        </Button>
       </Typography>
 
       <Grid container spacing={3}>
